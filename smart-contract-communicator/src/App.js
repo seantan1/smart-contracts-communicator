@@ -51,11 +51,11 @@ function App() {
         // });
 
         // setTokenContractInstance
-        contractVault.methods.setTokenContractInstance(TOKEN_CONTRACT_ADDRESS).send({
-            from: account
-        }).then(function(result) {
-            console.log(result);
-        });
+        // contractVault.methods.setTokenContractInstance(TOKEN_CONTRACT_ADDRESS).send({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
         // END OF STARTUP
 
         // get symbol
