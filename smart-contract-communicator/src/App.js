@@ -23,7 +23,7 @@ function App() {
 
         let contractVault = new web3.eth.Contract(VAULT_CONTRACT_ABI, VAULT_CONTRACT_ADDRESS);
 
-        let amount = web3.utils.toWei('100000', 'ether');
+        let amount = web3.utils.toWei('1000', 'ether');
 
         // var amount_float = new Unit(parseFloat(amount)).asEther().toWei().toString();
         // gas value
@@ -58,19 +58,32 @@ function App() {
         // });
 
         // vault addToAuthorisedContracts
-        // contractVault.methods.isAuthorisedContract('0xEDEFA97721F659b5120B359f11372f0C0AB361a7').call({
+        // contractVault.methods.addToAuthorisedContracts('0xEDEFA97721F659b5120B359f11372f0C0AB361a7').send({
         //     from: account
         // }).then(function(result) {
         //     console.log(result);
         // });
         // END OF STARTUP
 
+        // addToExcludeFromSlashFee
+        // contract.methods.addToExcludeFromSlashFee('0x52Dd24b1ee7FD49b325C7a08287C0f6802410313').send({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
+
+        // contractVault.methods.reduceRating('0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E',amount).send({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
+
         // setTxLimit
-        contract.methods.setTxLimit(amount).send({
-            from: account
-        }).then(function(result) {
-            console.log(result);
-        });
+        // contract.methods.setTxLimit(amount).send({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
 
         // get symbol
         // contract.methods.symbol().call().then(function(result) {
@@ -107,8 +120,22 @@ function App() {
         //     console.log(result);
         // });
 
+        // reward rating
+        contractVault.methods.rewardRating("0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E", amount).send({
+            from: account
+        }).then(function(result) {
+            console.log(result);
+        });
+
+        // reduce rating
+        // contractVault.methods.reduceRating("0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E", amount).send({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
+
         // get rating
-        // contractVault.methods.getRating("0xEDEFA97721F659b5120B359f11372f0C0AB361a7").call({
+        // contractVault.methods.getRatingValueByAddress("0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E").call({
         //     from: account
         // }).then(function(result) {
         //     console.log(result);
