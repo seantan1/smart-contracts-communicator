@@ -1,4 +1,4 @@
-export const TOKEN_CONTRACT_ADDRESS = '0xB2d90BcfE159ae10f2d6A7bbe453Df26FCa81DCf';
+export const TOKEN_CONTRACT_ADDRESS = '0x1d611c8F37bc96772653B11d9410A2B71C684754';
 export const TOKEN_CONTRACT_ABI = [
     {
       "inputs": [],
@@ -394,18 +394,17 @@ export const TOKEN_CONTRACT_ABI = [
       "constant": true
     },
     {
-      "inputs": [],
-      "name": "getSlashFeeReceiver",
-      "outputs": [
+      "inputs": [
         {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
+          "internalType": "uint256",
+          "name": "_slashFee",
+          "type": "uint256"
         }
       ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "name": "setSlashFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
     },
     {
       "inputs": [
@@ -429,6 +428,19 @@ export const TOKEN_CONTRACT_ABI = [
         }
       ],
       "name": "removeFromAuthorisedContracts",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setTxLimit",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -525,8 +537,8 @@ export const TOKEN_CONTRACT_ABI = [
     }
   ];
 
-export const VAULT_CONTRACT_ADDRESS = '0x3e0ecc1439EE4cf36FE905442AADB8eC31F02CBC';
-export const VAULT_CONTRACT_ABI = [
+  export const VAULT_CONTRACT_ADDRESS = '0x53C2D6aA53f76b085b9d4ECe82047a7aB19b0A7b';
+  export const VAULT_CONTRACT_ABI = [
     {
       "inputs": [],
       "stateMutability": "nonpayable",
@@ -1104,6 +1116,42 @@ export const VAULT_CONTRACT_ABI = [
         }
       ],
       "name": "spendCredits",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rating",
+          "type": "uint256"
+        }
+      ],
+      "name": "rewardRating",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rating",
+          "type": "uint256"
+        }
+      ],
+      "name": "reduceRating",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"

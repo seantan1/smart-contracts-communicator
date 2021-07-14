@@ -23,7 +23,7 @@ function App() {
 
         let contractVault = new web3.eth.Contract(VAULT_CONTRACT_ABI, VAULT_CONTRACT_ADDRESS);
 
-        let amount = web3.utils.toWei('500', 'ether');
+        let amount = web3.utils.toWei('100000', 'ether');
 
         // var amount_float = new Unit(parseFloat(amount)).asEther().toWei().toString();
         // gas value
@@ -56,7 +56,21 @@ function App() {
         // }).then(function(result) {
         //     console.log(result);
         // });
+
+        // vault addToAuthorisedContracts
+        // contractVault.methods.isAuthorisedContract('0xEDEFA97721F659b5120B359f11372f0C0AB361a7').call({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
         // END OF STARTUP
+
+        // setTxLimit
+        contract.methods.setTxLimit(amount).send({
+            from: account
+        }).then(function(result) {
+            console.log(result);
+        });
 
         // get symbol
         // contract.methods.symbol().call().then(function(result) {
