@@ -121,7 +121,7 @@ function App() {
         // });
 
         // reward rating
-        contractVault.methods.rewardRating("0xbc1058B96745B9B7f273F7C62Fa3864955a5aaD3", amount).send({
+        contractVault.methods.rewardRating("0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E", amount).send({
             from: account
         }).then(function(result) {
             console.log(result);
