@@ -23,7 +23,7 @@ function App() {
 
         let contractVault = new web3.eth.Contract(VAULT_CONTRACT_ABI, VAULT_CONTRACT_ADDRESS);
 
-        let amount = web3.utils.toWei('1000', 'ether');
+        let amount = web3.utils.toWei('10000000', 'ether');
 
         // var amount_float = new Unit(parseFloat(amount)).asEther().toWei().toString();
         // gas value
@@ -37,7 +37,7 @@ function App() {
         //     console.log(result);
         // });
         // addToExcludeFromSlashFee
-        // contract.methods.addToExcludeFromSlashFee(LIQUIDITY_POOL_CONTRACT_ADDRESS).send({
+        // contract.methods.addToExcludeFromSlashFee('0x28f36903cfdf34bba0ec5b9b7dd0e5db39a73ba4').send({
         //     from: account
         // }).then(function(result) {
         //     console.log(result);
@@ -121,7 +121,7 @@ function App() {
         // });
 
         // reward rating
-        contractVault.methods.rewardRating("0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E", amount).send({
+        contractVault.methods.rewardRating("0xbc1058B96745B9B7f273F7C62Fa3864955a5aaD3", amount).send({
             from: account
         }).then(function(result) {
             console.log(result);
