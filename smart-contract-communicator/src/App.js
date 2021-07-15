@@ -121,11 +121,11 @@ function App() {
         // });
 
         // reward rating
-        contractVault.methods.rewardRating("0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E", amount).send({
-            from: account
-        }).then(function(result) {
-            console.log(result);
-        });
+        // contractVault.methods.rewardRating("0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E", amount).send({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
 
         // reduce rating
         // contractVault.methods.reduceRating("0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E", amount).send({
@@ -142,11 +142,11 @@ function App() {
         // });
 
         // getDepositsByOwner
-        // contractVault.methods.getDepositById(10).call({
-        //     from: account
-        // }).then(function(result) {
-        //     console.log(result);
-        // });
+        contractVault.methods.getDepositById(2).call({
+            from: account
+        }).then(function(result) {
+            console.log(result);
+        });
 
         // getOwnerDepositCount
         // contractVault.methods.getOwnerAddressByDepositId(10).call({
