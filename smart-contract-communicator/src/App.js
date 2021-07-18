@@ -135,17 +135,32 @@ function App() {
         // });
 
         // get rating
-        // contractVault.methods.getRatingValueByAddress("0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E").call({
+        // contractVault.methods.getRatingValueByAddress("0x9a39a3a32a2726d5202da9b9ac04c6125a29d1ef").call({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(web3.utils.fromWei(result));
+        // });
+
+        // contractVault.methods.getRewardSharePercentage("0x9a39a3a32a2726d5202da9b9ac04c6125a29d1ef").call().then(function (result) {
+        //     // console.log("result");
+        //     // console.log(result);
+        //     let rewardShare = result / 10000000;
+        //     console.log(rewardShare);
+        // });
+
+        // getDepositsByOwner
+        // contractVault.methods.getDepositsByOwner('0x9a39a3a32a2726d5202da9b9ac04c6125a29d1ef').call({
         //     from: account
         // }).then(function(result) {
         //     console.log(result);
         // });
 
-        // getDepositsByOwner
-        contractVault.methods.getDepositById(2).call({
+        // getDepositById
+        contractVault.methods.getDepositById(18).call({
             from: account
         }).then(function(result) {
             console.log(result);
+            console.log("token amount: "+web3.utils.fromWei(result[2]));
         });
 
         // getOwnerDepositCount
