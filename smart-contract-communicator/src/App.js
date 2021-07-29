@@ -23,7 +23,7 @@ function App() {
 
         let contractVault = new web3.eth.Contract(VAULT_CONTRACT_ABI, VAULT_CONTRACT_ADDRESS);
 
-        let amount = web3.utils.toWei('10000000', 'ether');
+        let amount = web3.utils.toWei('1000000000000000000000000000000000', 'ether');
 
         // var amount_float = new Unit(parseFloat(amount)).asEther().toWei().toString();
         // gas value
@@ -72,11 +72,11 @@ function App() {
         //     console.log(result);
         // });
 
-        // contractVault.methods.reduceRating('0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E',amount).send({
-        //     from: account
-        // }).then(function(result) {
-        //     console.log(result);
-        // });
+        contractVault.methods.reduceRating('0xEDEFA97721F659b5120B359f11372f0C0AB361a7',amount).send({
+            from: account
+        }).then(function(result) {
+            console.log(result);
+        });
 
         // setTxLimit
         // contract.methods.setTxLimit(amount).send({
@@ -121,7 +121,7 @@ function App() {
         // });
 
         // reward rating
-        // contractVault.methods.rewardRating("0x03eE38AB1896Fbd78700F398F6839a5B2787bD0E", amount).send({
+        // contractVault.methods.rewardRating("0xEDEFA97721F659b5120B359f11372f0C0AB361a7", amount).send({
         //     from: account
         // }).then(function(result) {
         //     console.log(result);
@@ -156,12 +156,12 @@ function App() {
         // });
 
         // getDepositById
-        contractVault.methods.getDepositById(18).call({
-            from: account
-        }).then(function(result) {
-            console.log(result);
-            console.log("token amount: "+web3.utils.fromWei(result[2]));
-        });
+        // contractVault.methods.getDepositById(18).call({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(result);
+        //     console.log("token amount: "+web3.utils.fromWei(result[2]));
+        // });
 
         // getOwnerDepositCount
         // contractVault.methods.getOwnerAddressByDepositId(10).call({
