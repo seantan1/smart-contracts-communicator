@@ -24,21 +24,21 @@ function App() {
 
         // let contractVault = new web3.eth.Contract(VAULT_CONTRACT_ABI, VAULT_CONTRACT_ADDRESS);
 
-        let amount = web3.utils.toWei('1', 'ether');
+        let amount = web3.utils.toWei('0.001234', 'ether');
 
         // var amount_float = new Unit(parseFloat(amount)).asEther().toWei().toString();
         // gas value
         // const gas = 6721900;
 
         // mint token
-        // contract.methods.mint('001', '010').send({
+        // contract.methods.mint('001', '002').send({
         //     from: account
         // }).then(function(result) {
         //     console.log(result);
         // });
 
         // listNFTOnMarket
-        // contract.methods.listNFTOnMarket(0, amount).send({
+        // contract.methods.listNFTOnMarket(3, amount).send({
         //     from: account
         // }).then(function(result) {
         //     console.log(result);
@@ -51,12 +51,12 @@ function App() {
         // });
 
         // purchaseNFT
-        contract.methods.purchaseNFT(0).send({
-            from: account,
-            value: amount
-        }).then(function(result) {
-            console.log(result);
-        });
+        // contract.methods.purchaseNFT(0).send({
+        //     from: account,
+        //     value: amount
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
 
         // STARTUP, add vault and liquidity pool to exclusion
         // addToExcludeFromSlashFee
