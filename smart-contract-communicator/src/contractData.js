@@ -1,4 +1,4 @@
-export const TOKEN_CONTRACT_ADDRESS = '0xe9dd9ad395Cb051cD4551e6aDBcAfFd918438F68';
+export const TOKEN_CONTRACT_ADDRESS = '0xEfA46F5e38bCe6f88af1F0161d94bF0438c6Bdc5';
 export const TOKEN_CONTRACT_ABI = [
     {
       "inputs": [],
@@ -377,6 +377,11 @@ export const TOKEN_CONTRACT_ABI = [
       "type": "function"
     },
     {
+      "stateMutability": "payable",
+      "type": "receive",
+      "payable": true
+    },
+    {
       "inputs": [
         {
           "internalType": "string",
@@ -442,8 +447,9 @@ export const TOKEN_CONTRACT_ABI = [
       ],
       "name": "listNFTOnMarket",
       "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "stateMutability": "payable",
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -464,17 +470,13 @@ export const TOKEN_CONTRACT_ABI = [
           "internalType": "uint256",
           "name": "tokenId",
           "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
         }
       ],
       "name": "purchaseNFT",
       "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "stateMutability": "payable",
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -539,6 +541,40 @@ export const TOKEN_CONTRACT_ABI = [
       "inputs": [],
       "name": "kill",
       "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "onERC721Received",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "function"
     }
