@@ -21,9 +21,9 @@ function App() {
         let web3 = new Web3(window.ethereum);
         let contract = new web3.eth.Contract(TOKEN_CONTRACT_ABI, TOKEN_CONTRACT_ADDRESS);
 
-        let contractVault = new web3.eth.Contract(VAULT_CONTRACT_ABI, VAULT_CONTRACT_ADDRESS);
+        // let contractVault = new web3.eth.Contract(VAULT_CONTRACT_ABI, VAULT_CONTRACT_ADDRESS);
 
-        let amount = web3.utils.toWei('1000000000000000000000000000000000', 'ether');
+        let amount = web3.utils.toWei('100', 'ether');
 
         // var amount_float = new Unit(parseFloat(amount)).asEther().toWei().toString();
         // gas value
@@ -72,11 +72,11 @@ function App() {
         //     console.log(result);
         // });
 
-        contractVault.methods.reduceRating('0xEDEFA97721F659b5120B359f11372f0C0AB361a7',amount).send({
-            from: account
-        }).then(function(result) {
-            console.log(result);
-        });
+        // contractVault.methods.reduceRating('0xEDEFA97721F659b5120B359f11372f0C0AB361a7',amount).send({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
 
         // setTxLimit
         // contract.methods.setTxLimit(amount).send({
