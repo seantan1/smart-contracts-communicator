@@ -30,11 +30,17 @@ function App() {
         // gas value
         // const gas = 6721900;
 
+        web3.eth.getTransactionReceipt('0x53d82d4d8a8def1a9d00d8ffb4203a30af4fc2f76c82a4aea07f59946da89827')
+            .then(function (result) {
+                console.log(result.status);
+            });
+
         // mint token
         // contract.methods.mint('001', '002').send({
         //     from: account
-        // }).then(function(result) {
-        //     console.log(result);
+        // })
+        // .on('transactionHash', function (hash) {
+        //     console.log(hash);
         // });
 
         // listNFTOnMarket
@@ -133,8 +139,8 @@ function App() {
         //     console.log(result);
         // });
 
-        
-        
+
+
         // create deposit
         // contractVault.methods.createDeposit(31, amount).send({
         //     from: account
