@@ -24,19 +24,27 @@ function App() {
 
         // let contractVault = new web3.eth.Contract(VAULT_CONTRACT_ABI, VAULT_CONTRACT_ADDRESS);
 
-        let amount = web3.utils.toWei('0.001234', 'ether');
+        let amount = web3.utils.toWei('1', 'ether');
 
         // var amount_float = new Unit(parseFloat(amount)).asEther().toWei().toString();
         // gas value
         // const gas = 6721900;
 
-        web3.eth.getTransactionReceipt('0x53d82d4d8a8def1a9d00d8ffb4203a30af4fc2f76c82a4aea07f59946da89827')
-            .then(function (result) {
-                console.log(result.status);
-            });
+        // web3.eth.getTransactionReceipt('0x53d82d4d8a8def1a9d00d8ffb4203a30af4fc2f76c82a4aea07f59946da89827')
+        //     .then(function (result) {
+        //         console.log(result.status);
+        //     });
+
+        // add admin
+        // contract.methods.addAdminAddress('0x8f47F1ce13AC5F291Cb045a08Df8214F5B667ada').send({
+        //     from: account
+        // })
+        // .on('transactionHash', function (hash) {
+        //     console.log(hash);
+        // });
 
         // mint token
-        // contract.methods.mint('001', '002').send({
+        // contract.methods.mint('0x8f47F1ce13AC5F291Cb045a08Df8214F5B667ada', '001', '002').send({
         //     from: account
         // })
         // .on('transactionHash', function (hash) {
@@ -44,11 +52,11 @@ function App() {
         // });
 
         // listNFTOnMarket
-        // contract.methods.listNFTOnMarket(3, amount).send({
-        //     from: account
-        // }).then(function(result) {
-        //     console.log(result);
-        // });
+        contract.methods.listNFTOnMarket(2, amount).send({
+            from: account
+        }).then(function(result) {
+            console.log(result);
+        });
 
         // multiCallNFTsOnMarket
         // contract.methods.multiCallNFTsOnMarket().call()
