@@ -7,8 +7,8 @@ import detectEthereumProvider from '@metamask/detect-provider';
 import {
     TOKEN_CONTRACT_ADDRESS,
     TOKEN_CONTRACT_ABI,
-    VAULT_CONTRACT_ADDRESS,
-    VAULT_CONTRACT_ABI
+    MULTICALL_CONTRACT_ADDRESS,
+    MULTICALL_CONTRACT_ABI
 } from './contractData.js';
 
 function App() {
@@ -22,9 +22,16 @@ function App() {
         let contract = new web3.eth.Contract(TOKEN_CONTRACT_ABI, TOKEN_CONTRACT_ADDRESS);
 
 
-        // let contractVault = new web3.eth.Contract(VAULT_CONTRACT_ABI, VAULT_CONTRACT_ADDRESS);
+        let contractMulti = new web3.eth.Contract(MULTICALL_CONTRACT_ABI, MULTICALL_CONTRACT_ADDRESS);
 
         let amount = web3.utils.toWei('1', 'ether');
+
+        contract.methods.addAdminAddress('0x0d1A4346eA475C2D86000389F6FCAC6eA5ec712d').send({
+            from: account
+        })
+        .then(function (result) {
+            console.log(result);
+        });
 
         // var amount_float = new Unit(parseFloat(amount)).asEther().toWei().toString();
         // gas value
@@ -52,11 +59,11 @@ function App() {
         // });
 
         // listNFTOnMarket
-        contract.methods.listNFTOnMarket(2, amount).send({
-            from: account
-        }).then(function(result) {
-            console.log(result);
-        });
+        // contract.methods.listNFTOnMarket(2, amount).send({
+        //     from: account
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
 
         // multiCallNFTsOnMarket
         // contract.methods.multiCallNFTsOnMarket().call()
