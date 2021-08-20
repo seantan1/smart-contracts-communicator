@@ -24,14 +24,21 @@ function App() {
 
         let contractMulti = new web3.eth.Contract(MULTICALL_CONTRACT_ABI, MULTICALL_CONTRACT_ADDRESS);
 
-        let amount = web3.utils.toWei('1', 'ether');
+        let amount = web3.utils.toWei('0.01', 'ether');
 
-        contract.methods.addAdminAddress('0x0d1A4346eA475C2D86000389F6FCAC6eA5ec712d').send({
-            from: account
-        })
-        .then(function (result) {
-            console.log(result);
-        });
+        // contract.methods.addAdminAddress('0x00E7629989EFe8CdB01A01e7F0b5042dAa98C406').send({
+        //     from: account
+        // })
+        // .then(function (result) {
+        //     console.log(result);
+        // });
+
+        // contractMulti.methods.setNFTContractAddress(TOKEN_CONTRACT_ADDRESS).send({
+        //     from: account
+        // })
+        // .then(function (result) {
+        //     console.log(result);
+        // });
 
         // var amount_float = new Unit(parseFloat(amount)).asEther().toWei().toString();
         // gas value
@@ -66,18 +73,23 @@ function App() {
         // });
 
         // multiCallNFTsOnMarket
-        // contract.methods.multiCallNFTsOnMarket().call()
+        // contractMulti.methods.multiCallNFTsOnMarket().call()
+        // .then(function(result) {
+        //     console.log(result);
+        // });
+
+        // contractMulti.methods.multiCallTransactionDataByUser(account).call()
         // .then(function(result) {
         //     console.log(result);
         // });
 
         // purchaseNFT
-        // contract.methods.purchaseNFT(0).send({
-        //     from: account,
-        //     value: amount
-        // }).then(function(result) {
-        //     console.log(result);
-        // });
+        contract.methods.purchaseNFT(1).send({
+            from: account,
+            value: amount
+        }).then(function(result) {
+            console.log(result);
+        });
 
         // STARTUP, add vault and liquidity pool to exclusion
         // addToExcludeFromSlashFee
