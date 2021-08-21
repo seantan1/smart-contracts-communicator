@@ -50,12 +50,12 @@ function App() {
         //     });
 
         // add admin
-        // contract.methods.addAdminAddress('0x8f47F1ce13AC5F291Cb045a08Df8214F5B667ada').send({
-        //     from: account
-        // })
-        // .on('transactionHash', function (hash) {
-        //     console.log(hash);
-        // });
+        contract.methods.addAdminAddress('0x6aa016A1532A90A5537FC844F5822B63c5764D16').send({
+            from: account
+        })
+        .on('transactionHash', function (hash) {
+            console.log(hash);
+        });
 
         // mint token
         // contract.methods.mint('0x8f47F1ce13AC5F291Cb045a08Df8214F5B667ada', '001', '002').send({
@@ -84,12 +84,12 @@ function App() {
         // });
 
         // purchaseNFT
-        contract.methods.purchaseNFT(1).send({
-            from: account,
-            value: amount
-        }).then(function(result) {
-            console.log(result);
-        });
+        // contract.methods.purchaseNFT(1).send({
+        //     from: account,
+        //     value: amount
+        // }).then(function(result) {
+        //     console.log(result);
+        // });
 
         // STARTUP, add vault and liquidity pool to exclusion
         // addToExcludeFromSlashFee
