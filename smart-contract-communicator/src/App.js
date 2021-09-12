@@ -26,7 +26,16 @@ function App() {
 
         let amount = web3.utils.toWei('0.01', 'ether');
 
-        contract.methods.addAdminAddress('0x357fBC1aBE196aBb634192699119db86Ddd7Ce33').send({
+        // contract.methods.addAdminAddress('0x357fBC1aBE196aBb634192699119db86Ddd7Ce33').send({
+        //     from: account
+        // })
+        // .then(function (result) {
+        //     console.log(result);
+        // });
+
+        
+
+        contract.methods.removeNFTFromMarket('7').send({
             from: account
         })
         .then(function (result) {
